@@ -2,10 +2,12 @@ require 'pry'
 class CashRegister
       attr_accessor :total, :discount
   @items = Array.new 
+  @added_value = Array.new
   def initialize(discount= 0.00)
       @total = 0.00 
       @discount = discount
       @items = []
+      @added_value = []
   end
   
   def total
@@ -18,6 +20,8 @@ class CashRegister
       @items << title
       i+=1
     end
+    items_value = price*qnty
+    @added_value << items_value
     @total = @total + (price * qnty)
   end
   
@@ -33,4 +37,6 @@ class CashRegister
   def items
     @items
   end
+  
+ def void_last_transaction
 end
