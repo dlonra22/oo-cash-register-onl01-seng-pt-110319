@@ -39,4 +39,5 @@ class CashRegister
   end
   
  def void_last_transaction
+   value_to_void = @added_value.pop
 end
