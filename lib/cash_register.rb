@@ -16,7 +16,7 @@ class CashRegister
     i = 0
     while i < qnty do
       @items << title
-      i++
+      i+=1
     end
     @total = @total + (price * qnty)
   end
